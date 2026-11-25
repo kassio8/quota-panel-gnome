@@ -6,6 +6,8 @@ Criador: **[kassio8](https://github.com/kassio8)**. Projeto independente, sem v�
 
 Mostra a cota usada da assinatura Codex na barra superior. O indicador exibe somente a porcentagem da janela de 5 horas, como `4%`. Esse valor não representa um total diário de tokens. O menu mantém todas as janelas informadas pelo Codex, seus percentuais e horários de renovação. Quando a janela de 5 horas está indisponível, o indicador mostra `—`.
 
+Para desenvolver ou revisar o projeto, consulte o [guia de arquitetura](README-ARQUITETURA.md).
+
 ## Compatibilidade e estado da distribuição
 
 O projeto gera dois **pacotes candidatos de teste**:
