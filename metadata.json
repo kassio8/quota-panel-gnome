@@ -1,0 +1,11 @@
+{
+  "uuid": "codex-quota@kassio8",
+  "name": "Quota Panel",
+  "version": 7,
+  "description": "Indicador independente de cotas do Codex para GNOME, criado por kassio8. Requer Codex CLI instalado e autenticado. Sem vínculo, patrocínio ou aprovação da OpenAI.",
+  "shell-version": [
+    "46"
+  ],
+  "settings-schema": "org.gnome.shell.extensions.codex-quota",
+  "url": "https://github.com/kassio8/quota-panel-gnome"
+}

@@ -1,0 +1,15 @@
+Quota Panel for GNOME
+Copyright (C) 2026 kassio8
+
+The extension source is licensed under the GNU General Public License, version 2 or (at your
+option) any later version. The full version 2 license is in LICENSE.
+
+This is an independent project by kassio8. It is not affiliated with, sponsored
+by, or endorsed by OpenAI or the GNOME project. Codex is a product of OpenAI;
+the name is used only to identify the external CLI this extension supports.
+Codex CLI is not included in the extension archives.
+
+The quota-panel-*.svg icons were created for this project and are distributed
+under GPL-2.0-or-later, like the extension source. OpenAI logos and icons are
+not included. Third-party product names and trademarks remain the property
+of their respective owners; this license does not grant trademark rights.

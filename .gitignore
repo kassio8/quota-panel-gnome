@@ -1,0 +1,19 @@
+# Local configuration, credentials and generated files are not public source.
+AGENTS.md
+.env
+.env.*
+.codex/
+.venv/
+auth.json
+codex-path.txt
+*.desktop
+__pycache__/
+*.py[cod]
+schemas/gschemas.compiled
+dist/
+graft/
+trail/
+
+# Personal validation history and unpublished design notes.
+VALIDATION.md
+ideas-automação/

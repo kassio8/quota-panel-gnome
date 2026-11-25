@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <!-- SPDX-License-Identifier: GPL-2.0-or-later; original Quota Panel artwork. -->
+  <rect x="1" y="1" width="22" height="22" rx="5" fill="#164e63"/>
+  <rect x="5" y="12" width="3" height="7" rx="1" fill="#67e8f9"/>
+  <rect x="10.5" y="8" width="3" height="11" rx="1" fill="#22d3ee"/>
+  <rect x="16" y="5" width="3" height="14" rx="1" fill="#fbbf24"/>
+</svg>

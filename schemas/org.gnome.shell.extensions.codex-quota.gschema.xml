@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.codex-quota" path="/org/gnome/shell/extensions/codex-quota/">
+    <key name="codex-path" type="s">
+      <default>''</default>
+      <summary>Caminho absoluto do Codex CLI; vazio para detectar automaticamente</summary>
+    </key>
+    <key name="refresh-interval" type="i">
+      <range min="30" max="900"/>
+      <default>60</default>
+      <summary>Intervalo entre consultas de cota, em segundos</summary>
+    </key>
+    <key name="icon-size" type="i">
+      <range min="12" max="24"/>
+      <default>16</default>
+      <summary>Tamanho da logo no painel, em pixels</summary>
+    </key>
+    <key name="logo-style" type="i">
+      <range min="0" max="2"/>
+      <default>0</default>
+      <summary>Logo: 0 colorida, 1 monocromática, 2 terminal</summary>
+    </key>
+  </schema>
+</schemalist>

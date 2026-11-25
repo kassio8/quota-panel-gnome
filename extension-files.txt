@@ -1,0 +1,15 @@
+extension.js
+presentation.js
+appearance.js
+refresh.js
+prefs.js
+preferences-ui.js
+metadata.json
+reader.js
+quota.js
+quota-panel-color.svg
+quota-panel-symbolic.svg
+quota-panel-terminal-symbolic.svg
+LICENSE
+NOTICE
+schemas/org.gnome.shell.extensions.codex-quota.gschema.xml
