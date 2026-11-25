@@ -45,9 +45,7 @@ Registre distribuição, versões do GNOME, GJS, libadwaita e Codex CLI. Não in
 
 ## Identidade e atualização
 
-O nome público é **Quota Panel**. O UUID `codex-quota@kassio8` e o esquema `org.gnome.shell.extensions.codex-quota` são identificadores internos mantidos por compatibilidade. A mudança visual não cria outra extensão nem redefine preferências.
-
-Instalações antigas com `codex-quota@kassio.local` devem seguir a migração do [README](README.md#migrar-da-identificação-antiga). Não mantenha os dois UUIDs ativos.
+O nome público é **Quota Panel**. O UUID `codex-quota@kassio8` identifica a extensão no GNOME. As preferências usam o esquema `org.gnome.shell.extensions.codex-quota`.
 
 ## Publicação no GNOME Extensions
 

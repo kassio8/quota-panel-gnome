@@ -45,21 +45,9 @@ gnome-extensions enable codex-quota@kassio8
 
 Não instale os dois pacotes juntos: eles compartilham o mesmo UUID.
 
-O identificador interno `codex-quota@kassio8` foi mantido para atualizar instalações existentes sem criar outra extensão. Ele não aponta para um computador nem uma conta. Os ZIPs não levam caminhos pessoais, configurações ou dependências do autor. Cada pessoa precisa ter o Codex CLI instalado e autenticado na própria conta. A extensão procura o CLI no PATH e nas pastas `~/.local/bin` e `~/.npm-global/bin` do usuário atual, inclusive quando essas pastas não aparecem no PATH da sessão gráfica.
+O identificador interno `codex-quota@kassio8` identifica a extensão no GNOME; não aponta para um computador nem uma conta. Os ZIPs não levam caminhos pessoais, configurações ou dependências do autor. Cada pessoa precisa ter o Codex CLI instalado e autenticado na própria conta. A extensão procura o CLI no PATH e nas pastas `~/.local/bin` e `~/.npm-global/bin` do usuário atual, inclusive quando essas pastas não aparecem no PATH da sessão gráfica.
 
-Se o Codex estiver em outro local, execute `command -v codex` no terminal desse computador e informe o resultado em **Configurações → Caminho do executável**. Isso também atende instalações via NVM; o processo recebe a pasta do executável no PATH para encontrar o Node instalado ao lado dele. Se uma configuração antiga apontar para outro computador, apague o campo para voltar à detecção automática.
-
-## Migrar da identificação antiga
-
-O UUID mudou de `codex-quota@kassio.local` para `codex-quota@kassio8`. O GNOME considera os dois identificadores extensões diferentes. Se você já usava a versão antiga, desative-a antes de instalar o novo ZIP ou executar o instalador do projeto:
-
-```bash
-gnome-extensions disable codex-quota@kassio.local
-```
-
-Instale o pacote correspondente à sua versão do GNOME seguindo os comandos acima, saia da sessão e entre novamente. Ative `codex-quota@kassio8`. Mantenha a extensão antiga desativada para evitar dois indicadores e consultas duplicadas.
-
-As preferências GSettings são preservadas porque o esquema e seu caminho continuam iguais. O arquivo local `codex-path.txt` da pasta antiga não é migrado; se a detecção automática não encontrar o CLI, configure o caminho nas preferências da nova extensão.
+Se o Codex estiver em outro local, execute `command -v codex` no terminal desse computador e informe o resultado em **Configurações → Caminho do executável**. Isso também atende instalações via NVM; o processo recebe a pasta do executável no PATH para encontrar o Node instalado ao lado dele. Para voltar à detecção automática, deixe o campo vazio.
 
 ## Instalar a partir do projeto
 
