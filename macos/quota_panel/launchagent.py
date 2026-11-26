@@ -7,14 +7,16 @@ from pathlib import Path
 from . import LABEL
 
 
-def plist(venv_python: str, log_dir=None) -> dict:
+def plist(venv_python: str, log_dir=None, app_dir=None) -> dict:
     logs = Path(log_dir) if log_dir is not None else Path.home() / "Library" / "Logs" / "QuotaPanel"
+    app = Path(app_dir) if app_dir is not None else Path.home() / "Library" / "Application Support" / "QuotaPanel"
     return {"Label": LABEL, "ProgramArguments": [venv_python, "-m", "quota_panel"],
-            "RunAtLoad": True, "KeepAlive": True, "LimitLoadToSessionType": "Aqua",
+            "RunAtLoad": True, "KeepAlive": {"SuccessfulExit": False}, "LimitLoadToSessionType": "Aqua",
+            "EnvironmentVariables": {"PYTHONPATH": str(app)},
             "StandardOutPath": str(logs / "stdout.log"), "StandardErrorPath": str(logs / "stderr.log")}
 
 
-def write_plist(path, venv_python: str, log_dir=None):
+def write_plist(path, venv_python: str, log_dir=None, app_dir=None):
     target = Path(path)
     target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_bytes(plistlib.dumps(plist(venv_python, log_dir)))
+    target.write_bytes(plistlib.dumps(plist(venv_python, log_dir, app_dir)))

@@ -11,9 +11,13 @@ from .presentation import menu_items, summary_label
 from .quota_core import query_quota
 
 
-def main():
+try:
     import rumps
+except ImportError:  # Linux test/import path.
+    rumps = None
 
+
+if rumps is not None:
     class QuotaPanel(rumps.App):
         def __init__(self):
             super().__init__("Quota Panel", title="—", quit_button=None)
@@ -33,12 +37,15 @@ def main():
             self._busy = True
             settings = self._store.get()
             self._query_timer.interval = settings.interval_seconds
-            thread = threading.Thread(target=self._query, args=(settings,), daemon=True)
-            thread.start()
+            threading.Thread(target=self._query, args=(settings,), daemon=True).start()
 
         def _query(self, settings):
-            binary = find_codex(settings.codex_path, saved_path_file=saved_codex_path_file())
-            self._results.put(query_quota(binary))
+            try:
+                binary = find_codex(settings.codex_path, saved_path_file=saved_codex_path_file())
+                result = query_quota(binary)
+            except Exception:
+                result = {"status": "error", "message": "Não foi possível ler a cota do Codex", "buckets": []}
+            self._results.put(result)
 
         def _poll(self, _timer=None):
             try:
@@ -55,8 +62,9 @@ def main():
                 if item["type"] == "separator":
                     self.menu.add(None)
                 elif item["type"] == "action":
-                    callback = self._refresh if item["text"] == "Atualizar agora" else self._open_config
-                    self.menu.add(rumps.MenuItem(item["text"], callback))
+                    callbacks = {"Atualizar agora": self._refresh, "Configurações…": self._open_config,
+                                 "Sair": rumps.quit_application}
+                    self.menu.add(rumps.MenuItem(item["text"], callbacks[item["text"]]))
                 else:
                     self.menu.add(rumps.MenuItem(item["text"]))
 
@@ -64,6 +72,13 @@ def main():
             path = ensure_config()
             subprocess.Popen(["open", "-t", str(path)])
 
+
+else:
+    class QuotaPanel:
+        def __init__(self):
+            raise RuntimeError("rumps is required on macOS")
+
+def main():
     app = QuotaPanel()
     try:
         from AppKit import NSApplication

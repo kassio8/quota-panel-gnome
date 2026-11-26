@@ -34,3 +34,4 @@ class PresentationTests(unittest.TestCase):
         self.assertIn("Uso incluído indisponível nesta conta", texts)
         self.assertIn("5 h · 100% usado", texts)
         self.assertIn("Atualizado às 19:06", texts)
+        self.assertEqual(menu_items(quota)[-1], {"text": "Sair", "type": "action"})

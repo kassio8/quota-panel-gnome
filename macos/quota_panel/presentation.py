@@ -62,7 +62,8 @@ def menu_items(quota) -> list[dict[str, Any]]:
         if isinstance(checked, int) and not isinstance(checked, bool):
             items.append({"text": "", "type": "separator"})
             items.append({"text": f"Atualizado às {datetime.fromtimestamp(checked).astimezone().strftime('%H:%M')}", "type": "line"})
-    items.extend(({"text": "", "type": "separator"}, {"text": "Atualizar agora", "type": "action"}, {"text": "Configurações…", "type": "action"}))
+    items.extend(({"text": "", "type": "separator"}, {"text": "Atualizar agora", "type": "action"},
+                  {"text": "Configurações…", "type": "action"}, {"text": "Sair", "type": "action"}))
     return items
 
 
